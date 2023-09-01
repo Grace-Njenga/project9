@@ -1,0 +1,859 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@400;600&family=Luckiest+Guy&display=swap');
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Hind Madurai', sans-serif;
+}
+:root {
+  --primary-color: #ef2d50;
+  --font-color: #eddfe4;
+  --secondary-color: #701d31;
+  --background-color: #1f1f1f;
+  --font-size-xxxl: clamp(3.05rem, 3.54vw+2.17rem, 5rem);
+  --font-size-xxl: clamp(2.44rem, 2.38vw+1.85rem, 3.75rem);
+  --font-size-xl: clamp(1.95rem, 1.56w+1.56rem, 2.81rem);
+  --font-size-sm: clamp(0.9rem, 0.34vw+o.71rem, 1.19rem);
+  --font-size-base: clamp(0.8rem, 0.17vw+0.76rem, 0.89rem);
+}
+
+h1{
+  font-size: var(--font-size-xxxl);
+}
+h2{
+  font-size: var(--font-size-xxl);
+}
+h3{
+  font-size: var(--font-size-xl);
+}
+p{
+  font-size: var(--font-size-sm);
+}
+a{
+  font-size: var(--font-size-base);
+}
+
+.header{
+  background-color: var(--background-color);
+  max-width: 1400px;
+  width: 100%;
+  padding: 1em;
+}
+.header_box{
+  width: 100%;
+  /* border: 1px solid green; */
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.socials{
+  font-size: 1.3rem;
+  color: var(--font-color);
+}
+.socials ion-icon:hover{
+  color: var(--primary-color);
+}
+.terms{
+  display: flex;
+  color: var(--font-color);
+}
+.terms li{
+  position: relative;
+  display: block;
+  margin-inline: .5em;
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  transition: 0.5s;
+}
+.terms li:hover{
+  color: var(--primary-color);
+}
+.terms li::after{
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-color);
+  left: 0;
+  right: 0%;
+  top: 100%;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+  transform-origin: right;
+  pointer-events: none;
+  /* opacity: 0; */
+}
+.terms li:hover::after{
+  /* opacity: 1; */
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.hero_section{
+  position: relative;
+  /* padding: 0 1em; */
+}
+.hero_section::before{
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right top, 
+  rgba(31, 31, 31, 0.6), 
+  rgba(25, 25, 25, 0.7), 
+  rgba(19, 19, 19, 0.6), 
+  rgba(11, 11, 11, 0.7), 
+  rgba(0, 0, 0, 0.4)),
+  url('./dist/revendo-7x0dGJqbfgk-unsplash.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+}
+/* .hero_box{
+  /* margin: 0 1em; 
+} */
+.nav{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: baseline;
+  background-color: rgba(31,31,31,.6);
+  padding: .3em 3em;
+}
+.menu{
+  position: absolute;
+  right: 2%;
+  color: var(--font-color);
+  font-size: 1.5rem;
+  background-color: var(--primary-color);
+  padding: .1em;
+  border-radius: .4rem;
+  display: none;
+  cursor: pointer;
+}
+.menu ion-icon{
+  margin: auto;
+}
+.banner{
+  display: flex;
+  align-items: baseline;
+}
+.banner h1{
+  font-family: 'Luckiest Guy', cursive;
+  color: #f1f1f1;
+  font-size: larger;
+}
+.banner ion-icon{
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-right: .2em;
+}
+.banner .pink{
+  color: var(--primary-color);
+  font-family: 'Luckiest Guy', cursive;
+}
+.nav_container {
+  /* width: 100%; */
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.nav_list{
+  display: flex;
+}
+.nav_list li{
+  list-style: none;
+  margin-right: .7em;
+}
+.nav_list li:last-child{
+  margin: 0;
+}
+.nav_list a{
+  text-decoration: none;
+  color: var(--font-color);
+  font-weight: 480;
+  font-size: var(--font-size-sm);
+  /* margin-right: .3em; */
+  transition: 0.5s;
+}
+.nav_list a:hover{
+  color: var(--primary-color);
+}
+.nav_icons ion-icon{
+  border-left: 1px solid white;
+  color: var(--font-color);
+  margin-left: .5em;
+  padding: 0 5px;
+  font-size: var(--font-size-xxxl);
+  font-weight: bold;
+}
+
+.intro_center{
+  display: grid;
+  width: 100%;
+  padding: 1em 0;
+  color: var(--font-color);
+}
+.intro_content{
+  max-width: 600px;
+  /* margin: 0 3em; */
+  width: 100%;
+  margin: 9rem auto;
+  text-align: center;
+}
+.intro_content h3{
+  font-family: 'Luckiest Guy', cursive;
+  color: var(--font-color);
+  padding: .5em 0;
+  font-weight: bold;
+  letter-spacing: .25em;
+}
+.intro_content h2{
+  /* font-size: 2rem; */
+  padding-bottom: .25em;
+}
+.intro_content p{
+  padding-bottom: 2em;
+  /* font-size: .9rem; */
+}
+.ctas_center{
+  margin: .5em 0;
+}
+.ctas_center a{
+  position: relative;
+  text-decoration: none;
+  padding: .5em 1em;
+  margin-right: .7em;
+  /* font-weight: 600; */
+  /* font-size: .9rem; */
+  white-space: nowrap;
+  transition: 0.8s;
+}
+.ctas_center a::before{
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--secondary-color);
+  transform: scaleX(0);
+  transition: transform 1.2s;
+  transform-origin: right;
+  z-index: -1;
+}
+.ctas_center a:hover:before,
+.ctas_center a:focus:before{
+  transform: scaleX(1);
+  transform-origin: left;
+  /* background-color: none; */
+}
+.ctas_center a:hover{
+  color: var(--font-color);
+}
+.ctas_center  .primary_btn{
+  background-color: var(--primary-color);
+  color: var(--font-color);
+  z-index: 1;
+}
+.ctas_center .secondary_btn{
+  border: 1px solid var(--primary-color);
+  color: var(--font-color);
+  z-index: 1;
+}
+.ctas_center .secondary_btn:hover{
+  border: none;
+}
+.ctas_center .primary_btn:hover{
+  background-color: transparent;
+}
+
+
+.about_us{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 0 3em;
+  /* gap: 1em; */
+}
+.top_absolute{
+  position: relative;
+  /* background-color: yellow; */
+  height: 200px;
+}
+
+.top_container{
+  position: absolute;
+  grid-row: span 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+  transform: translate(50%, 50%);
+  right: 50%;
+  bottom: 69%;
+}
+.top_card{
+  max-width:100%;
+  grid-column: span 1;
+  background-color: #f1f1f1;
+  box-shadow: 6px 4px 5px rgba(53, 47, 47, 0.3);
+  padding: .4em;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  /* grid-wrap: wrap; */
+  /* justify-content: space-between; */
+}
+.top_card ion-icon{
+  font-size: 50px;
+  color: var(--primary-color);
+}
+
+
+.about_section{
+  display: grid;
+  /* display: flex; */
+  grid-template-columns: 50% 50%;
+  gap: 2em;
+}
+.about_image{
+  grid-column: span 1;
+  height: 100%;
+  position: relative;
+}
+.about_image img{
+  max-width: 100%;
+  width: 94%;
+  height: 100%;
+  object-fit: cover;
+}
+.about_image::before{
+  position: absolute;
+  content: '';
+  top: 25px;
+  right: 0;
+  left: 25px;
+  bottom: 0;
+  width: 94%;
+  height: 100%;
+  border: .7em solid var(--primary-color);
+  z-index: -1;
+}
+.about_content{
+  grid-column: span 1;
+  /* font-size: 15px; */
+  margin: auto;
+  /* background-color: var(--primary-color); */
+  padding: 1em;
+}
+.about_content h3{
+  color: var(--primary-color);
+  padding-bottom: .5em;
+}
+.about_content h2{
+  /* font-size: 2.4rem; */
+  font-family: 'Luckiest Guy', cursive;
+  letter-spacing: .5em;
+}
+.about_content  ul{
+  margin: 1em 1.65em;
+}
+.about_content a{
+  position: relative;
+  text-decoration: none;
+  color: var(--font-color);
+  background-color: var(--primary-color);
+  padding: .3em 1.5em;
+  z-index: 1;
+  transition: 0.8s;
+}
+.about_content a:hover{
+  color: var(--font-color);
+  background-color: transparent;
+}
+.about_content a::before{
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: var(--secondary-color);
+  transform: scaleX(0);
+  transition: transform 1s;
+  transform-origin: right;
+  z-index: -1;
+}
+.about_content a:hover::before{
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.services{
+  --background-color: #f1f1f1;
+  background-color: var(--background-color);
+  /* padding: 1em 3em; */
+  margin-top: 2.5em;
+}
+.services_box{
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 1em 3em;
+  /* border: 1px solid green; */
+  /* padding: 1.5em; */
+}
+.about_center{
+  /* grid-row: span 1; */
+  margin: auto;
+  text-align: center;
+  padding: 1em;
+}
+.about_center h3{
+  /* font-size: .8rem; */
+  color: var(--primary-color);
+  padding-bottom: .5rem;
+}
+.about_center h2{
+  /* font-size: 2.4rem; */
+  font-family: 'Luckiest Guy', cursive;
+  letter-spacing: .6em;
+}
+
+.services_container{
+  padding: 1em 3em;
+  /* grid-row: span 1; */
+  /* place-content: center; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+}
+.services_card{
+  max-width: 100%;
+  grid-column: span 1;
+  background-color: white;
+  display: grid;
+  padding: 2em 1em;
+  word-wrap: break-word;
+  /* width: 300px; */
+}
+.services_card p{
+  font-size: .9rem;
+}
+.services_card ion-icon{
+  font-size: 4.2rem;
+  color: var(--primary-color);
+  margin: 0 auto;
+}
+.services_card h2{
+  /* font-size: 1rem; */
+  font-weight: bolder;
+  text-transform: uppercase;
+  font-weight: bolder;
+  padding: .5em 0;
+}
+
+
+.ratings{
+  display: grid;
+  grid-template-rows: 500px;
+  grid-template-columns: 100%;
+  background:linear-gradient(to right top, 
+  rgba(31, 31, 31, 0.6), 
+  rgba(25, 25, 25, 0.7), 
+  rgba(19, 19, 19, 0.6), 
+  rgba(11, 11, 11, 0.4), 
+  rgba(0, 0, 0, 0.4)),url('./dist/pexels-alessandro-oliverio-1472443.jpg');
+  padding: 0 1em;
+  background-position: center;
+  max-width: 100%;
+  width: 100%;
+}
+.ratings_container{
+  /* margin:  auto 2em; */
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: auto;
+  gap: .2em;
+}
+.ratings_card{
+  grid-column: span 1;
+  display: flex;
+  flex-direction: column;
+  /* background-color: #ca0c4f; */
+  margin: auto;
+  text-align: center;
+  align-items: center;
+  place-content: center;
+}
+.ratings_card ion-icon{
+  font-size: 3rem;
+  color: var(--font-color);
+}
+.ratings_card span{
+  color: var(--primary-color);
+  font-size: var(--font-size-xxxl);
+  font-family: 'Luckiest Guy', cursive;
+  letter-spacing: .3em;
+  padding: .5em 0;
+  /* font-size: 2rem; */
+}
+.ratings_card p{
+  color: var(--font-color);
+  /* font-size: 1.5rem; */
+}
+
+.team{
+  padding: 0 3em;
+}
+.team_box{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* padding: 1em 0; */
+}
+.team_center{
+  padding: 2em;
+  margin: auto;
+  /* background-color: #701d31; */
+  text-align: center;
+  /* grid-row: span 1; */
+}
+.team_center h2{
+  /* font-size: 2.4rem; */
+  font-family: 'Luckiest Guy', cursive;
+  letter-spacing: .3em;
+  padding: .35em 0;
+}
+.team_center h3{
+  /* font-size: 1.2rem; */
+  color: var(--primary-color);
+}
+.team_container{
+  /* grid-row: span 1; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* background-color: #ef2d50; */
+  gap: 15px;
+  /* padding: 0 1em; */
+}
+.team_card{
+  grid-column: span 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #f1f1f1;
+  text-align: center;
+  padding-bottom: 1em;
+  word-wrap: break-word;
+}
+.team_card h2{
+  font-family: cursive;
+  padding-top: .5em;
+  letter-spacing: .3em;
+}
+.team_card img{
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.client_reviews{
+  margin: 0 3em;
+  margin-top: 3.7em;
+  gap: 1em;
+  display: flex;
+  flex-wrap: wrap;
+}
+.client_video{
+  display: grid;
+  position: relative;
+  /* width: 50%; */
+}
+.client_video img{
+  object-fit: cover;
+  opacity: .7;
+  max-width: 100%;
+  width: 670px;
+  height: 500px;
+}
+.client_content{
+  position: absolute;
+  margin: auto;
+  text-align: center;
+  transform: translate(50%, 50%);
+  left: 30%;
+  top: 30%;
+}
+.client_content ion-icon{
+  font-size: 3rem;
+  color: var(--primary-color);
+}
+.client_content h2{
+  /* font-size: .8rem; */
+  color: var(--background-color);
+}
+.client_content a{
+  text-decoration: none;
+  font-weight: bolder;
+  color: var(--primary-color);
+  /* font-size: 1.5rem; */
+}
+.client_content a:hover{
+  color: var(--primary-color);
+}
+.client_words{
+  --background-color: #353535;
+  grid-column: span 1;
+  margin: auto;
+  display: grid;
+  padding: 4em 2em;
+  background-color: var(--background-color);
+}
+.title{
+  color: var(--font-color);
+  padding: 1em 0.9em;
+}
+.card{
+  position: relative;
+  background-color: #f1f1f1;
+  color: var(--background-color);
+  padding: 1em;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  max-width: 460px;
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: .5em;
+  border-top-left-radius: .5em;
+  /* max-height: 195px; */
+}
+.card::after{
+  position: absolute;
+  content: '';
+  background-color: var(--primary-color);
+  width: 100%;
+  height: 3px;
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+.client_credentials{
+  display: flex;
+  padding-top: .5em;
+  /* padding: 1em 0; */
+  /* background-color: #701d31; */
+  height: 100%;
+  align-items: flex-end;
+}
+.avatar {
+  height: 4em;
+  width: 4em;
+  /* background-color: #ef2d50; */
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-right: 1em;
+  border: 4px solid var(--background-color);
+}
+.person{
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.blog{
+  display: grid;
+  padding-top: 2em;
+  /* background-color: #1f1f1f; */
+  /* padding: 0 1em; */
+}
+.blog_center{
+  margin: 2em auto;
+  /* text-align: center; */
+  /* background-color: #701d31; */
+}
+.blog_center h3{
+  /* font-size: .9rem; */
+  color: var(--primary-color);
+}
+.blog_center h2{
+  /* font-size: 2.8rem;
+  */
+  font-family: 'Luckiest Guy', cursive;
+  text-align: center;
+  letter-spacing: .45em;
+}
+.blog_container{
+  margin: .9em 3em;
+  /* margin: 2em 0; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  gap: 10px;
+}
+.blog_card{
+  background-color: #f1f1f1;
+  /* height: auto; */
+  grid-column: span 1;
+  display: grid;
+  grid-template-rows: auto auto;
+}
+.mid .blog_content{
+  color: var(--background-color);
+  background-color: var(--primary-color);
+}
+.blog_image{
+  grid-row: span 1;
+}
+.blog_content{
+  grid-row: span 1;
+  padding: 1em .3em;
+}
+.blog_foot{
+  display: flex;
+  padding: .5em 1em;
+  align-items: baseline;
+}
+.blog_foot ion-icon{
+  margin-right: .2em;
+  font-size: 17px;
+}
+.blog_foot .time{
+  margin-left: 4em;
+}
+.blog_image img{
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.footer{
+  background-color: var(--background-color);
+  color: var(--font-color);
+  padding-bottom: 0;
+}
+.foot_container{
+  padding: 1em;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.foot_card{
+  --font-color: #f1f1f1;
+  /* background-color: rgb(1, 5, 5); */
+  padding: 10px;
+  color: var(--font-color);
+}
+.one p{
+  opacity: .5;
+  font-size: 15px;
+}
+.foot_icons{
+  display: flex;
+  opacity: .5;
+}
+.foot_icons ion-icon{
+  margin: .3em;
+  padding: .4em;
+  border: 1px solid white;
+  border-radius: 2em;
+}
+
+.foot_card .menu_links{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+}
+.foot_card .column{
+  grid-column: span 1;
+  /* background-color: #ef2d50; */
+  text-align: center;
+}
+.column a{
+  text-decoration: none;
+  display: flex;
+  color: var(--font-color);
+  padding: 0 .2em ;
+  opacity: .5;
+}
+.column a:hover{
+  color: var(--primary-color);
+}
+
+.foot_card form{
+  display: flex;
+  align-items: center;
+}
+form .input{
+  width: 100%;
+  flex: 1;
+  padding: .7em .8em;
+  border: 1px solid white;
+  opacity: .9;
+  outline: none;
+}
+form button{
+  border: 1px solid white;
+  outline: none;
+  padding: .7em 1.2em;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  opacity: .9;
+}
+form button:hover{
+  background-color: var(--secondary-color);
+  color: var(--font-color);
+}
+.three p{
+  font-size: 14px;
+  margin: 1em 0;
+  opacity: .5;
+}
+
+.foot_card .contact_me{
+  opacity: .5;
+  font-size: 15px;
+}
+
+.link{
+  display: flex;
+  justify-content: space-between;
+  background-color: #000;
+  padding: 1em;
+}
+.link1{
+  opacity: .5;
+}
+
+.link2 a{
+  text-decoration: none;
+  color: var(--font-color);
+  font-weight: bold;
+}
+.link3 a{
+  opacity: .5;
+  text-decoration: none;
+  color: var(--font-color);
+  margin-right: 1em;
+}
+.link2 a:hover{
+  color: var(--secondary-color);
+}
+.link3 a:hover{
+  color: var(--primary-color);
+}
